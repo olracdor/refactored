@@ -1,0 +1,69 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.16" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="5.0.16" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.3.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.16" />
+        <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
+        <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Services\" />
+      <None Remove="Microsoft.EntityFrameworkCore" />
+      <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+      <None Remove="Microsoft.EntityFrameworkCore.Sqlite.Core" />
+      <None Remove="Mappers\" />
+      <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+      <None Remove="Configurations\" />
+      <None Remove="Dto\" />
+      <None Remove="FluentValidation.AspNetCore" />
+      <None Remove="Validators\" />
+      <None Remove="Providers\" />
+      <None Remove="Providers\Implementors\" />
+      <None Remove="Swashbuckle.AspNetCore" />
+      <None Remove="Swashbuckle.AspNetCore.Swagger" />
+      <None Remove="Swashbuckle.AspNetCore.SwaggerUI" />
+      <None Remove="Swashbuckle.AspNetCore.Annotations" />
+      <None Remove="Microsoft.EntityFrameworkCore.Proxies" />
+      <None Remove="Microsoft.DotNet.PlatformAbstractions" />
+      <None Remove="Microsoft.Extensions.PlatformAbstractions" />
+      <None Remove="Autofac.Extensions.DependencyInjection" />
+      <None Remove="Microsoft.Extensions.DependencyModel" />
+      <None Remove="Microsoft.AspNetCore.Authentication" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Services\" />
+      <Folder Include="Mappers\" />
+      <Folder Include="Configurations\" />
+      <Folder Include="Dto\" />
+      <Folder Include="Validators\" />
+      <Folder Include="Providers\" />
+      <Folder Include="Providers\Implementors\" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\RefactorThis.Common\RefactorThis.Common.csproj">
+        <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+      </ProjectReference>
+      <ProjectReference Include="..\Domain.Product\Domain.Product.csproj">
+        <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+      </ProjectReference>
+    </ItemGroup>
+</Project>
