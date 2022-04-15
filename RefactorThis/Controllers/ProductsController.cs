@@ -95,7 +95,7 @@ namespace RefactorThis.Controllers
         [HttpPost]
         [Authorize]
         [SwaggerResponse(StatusCodes.Status200OK)]
-        public ActionResult Post(ProductDto product)
+        public ActionResult Post([FromBody] ProductDto product)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace RefactorThis.Controllers
         [HttpPut("{id}")]
         [Authorize]
         [SwaggerResponse(StatusCodes.Status200OK)]
-        public ActionResult Update(Guid id, ProductDto product)
+        public ActionResult Update(Guid id, [FromBody] ProductDto product)
         {
             try
             {
@@ -228,7 +228,7 @@ namespace RefactorThis.Controllers
         [HttpPost("{productId}/options")]
         [Authorize]
         [SwaggerResponse(StatusCodes.Status200OK)]
-        public ActionResult CreateOption(Guid productId, ProductOptionDto option)
+        public ActionResult CreateOption(Guid productId, [FromBody] ProductOptionDto option)
         {
             try
             {
@@ -258,7 +258,7 @@ namespace RefactorThis.Controllers
         [HttpPut("{productId}/options/{id}")]
         [Authorize]
         [SwaggerResponse(StatusCodes.Status200OK)]
-        public ActionResult UpdateOption(Guid productId, Guid id, ProductOptionDto option)
+        public ActionResult UpdateOption(Guid productId, Guid id, [FromBody] ProductOptionDto option)
         {
             try
             {
