@@ -13,7 +13,7 @@ namespace Domain.Product
 
         public ProductContext(DbContextOptions<ProductContext> options) : base(options)
         {
-            
+            Database.EnsureCreated();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

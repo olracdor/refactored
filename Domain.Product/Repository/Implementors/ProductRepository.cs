@@ -7,8 +7,9 @@ namespace Domain.Product.Repository.Implementors
     public class ProductRepository : IProductRepository
     {
         public ProductContext context { get; }
-        public ProductRepository()
+        public ProductRepository(ProductContext context)
         {
+            this.context = context;
         }
 
         public Entities.Product Get(Guid Id)

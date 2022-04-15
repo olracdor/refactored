@@ -7,8 +7,9 @@ namespace Domain.Product.Repository.Implementors
 {
     public class ProductOptionRepository : IProductOptionRepository
     {
-        public ProductOptionRepository()
+        public ProductOptionRepository(ProductContext context)
         {
+            this.context = context;
         }
 
         public ProductContext context { get; }

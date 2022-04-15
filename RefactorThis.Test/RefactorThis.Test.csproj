@@ -5,7 +5,19 @@
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+  <ItemGroup>
+		<None Remove="appsettings.Test.json" />
+		<None Remove="Microsoft.Extensions.Configuration.Binder" />
+		<None Remove="Moq" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<Content Include="appsettings.Test.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
@@ -13,11 +25,23 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Moq" Version="4.17.2" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Autofac.Extensions.DependencyInjection" />
     <None Remove="Microsoft.Extensions.DependencyModel" />
     <None Remove="Microsoft.AspNetCore.Authentication" />
+    <None Remove="TestData\" />
+    <None Remove="Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestData\" />
+    <Folder Include="Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RefactorThis\RefactorThis.csproj" />
+    <ProjectReference Include="..\Domain.Product\Domain.Product.csproj" />
+    <ProjectReference Include="..\RefactorThis.Common\RefactorThis.Common.csproj" />
   </ItemGroup>
 </Project>

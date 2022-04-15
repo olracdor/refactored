@@ -13,6 +13,7 @@ namespace RefactorThis.Providers.Implementors
     {
         IMapper _mapper;
         IProductRepository _productRepository;
+
         public ProductProvider(IMapper mapper, IProductRepository productRepository)
         {
             _mapper = mapper;
